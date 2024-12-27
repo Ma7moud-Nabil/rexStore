@@ -33,6 +33,7 @@ body {
   -moz-transition: 0.3s;
   -ms-transition: 0.3s;
   -o-transition: 0.3s;
+  z-index: 100;
 }
 
 .whatsapp-bottom img:hover {
@@ -129,12 +130,134 @@ header .container .menu i:hover {
   height: auto;
   min-height: 100vh;
   overflow: hidden;
+  margin-bottom: 20px;
+}
+
+@media screen and (min-width: 768px) {
+  .landing {
+    min-height: 140vh;
+    padding-bottom: 0;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .landing {
+    min-height: 70vh;
+    padding-bottom: 0;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .landing {
+    min-height: 40vh;
+    padding-bottom: 0;
+  }
 }
 
 /* End Landing */
 
 /* Start Playing Section */
+
 .playing .title {
   color: white;
+  font-size: 1.125rem;
+}
+
+.playing .cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+  gap: 12px;
+  margin: 30px 0;
+}
+
+@media (max-width: 991px) {
+  .playing .cards {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+}
+
+@media (max-width: 767px) {
+  .playing .cards {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+}
+
+.playing .cards .card {
+  border-radius: 15px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
+  overflow: hidden;
+  text-align: center;
+  color: white;
+}
+
+.playing .cards img {
+  width: 100%;
+}
+
+.playing .cards img:hover {
+  opacity: 0.9;
+}
+
+.playing .cards .card .txt {
+  font-variant-numeric: arabic-indic;
+}
+
+.playing .cards .card .txt h3 {
+  font-size: 15px;
+  margin: 10px;
+}
+
+.playing .cards .card .txt h4 {
+  font-size: 12px;
+  margin: 10px;
+  font-weight: normal;
+}
+.playing .cards .card .txt h4 del {
+  margin-right: 5px;
+}
+
+.playing .cards .card .btns {
+  width: 100%;
+  margin: auto;
+  font-size: 15px;
+  display: flex;
+  justify-content: center;
+}
+
+.playing .cards .card .btns button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: white;
+}
+
+.playing .cards .card .btns button.add {
+  border: 1px solid;
+  padding: 5px;
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+  margin-left: 7px;
+  width: 85%;
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
+}
+
+.playing .cards .card .btns button.add:hover {
+  background-color: white;
+  color: #99dfb9;
+}
+
+.playing .cards .card .btns button.like {
+  font-size: 20px;
+  opacity: 0.3;
 }
 /* End Playing Section */
