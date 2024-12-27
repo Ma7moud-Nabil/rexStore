@@ -1,0 +1,140 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Cairo", sans-serif;
+  direction: rtl;
+  background-color: #1d2c1e;
+}
+
+.container {
+  width: 98%;
+  margin: 0 auto;
+  padding: 0 10px;
+  position: relative;
+}
+
+.whatsapp-bottom img {
+  position: fixed;
+  width: 50px;
+  bottom: 20px;
+  right: 15px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  cursor: pointer;
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
+}
+
+.whatsapp-bottom img:hover {
+  transform: translateY(-5px);
+  -webkit-transform: translateY(-5px);
+  -moz-transform: translateY(-5px);
+  -ms-transform: translateY(-5px);
+  -o-transform: translateY(-5px);
+}
+
+/* Start Header */
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  padding: 5px 10px;
+  margin-right: 10px;
+  position: absolute;
+  z-index: 1;
+}
+
+header .container .menu {
+  cursor: pointer;
+  display: flex;
+  gap: 10px;
+  font-size: 18px;
+}
+
+header .container .menu i {
+  margin-left: 10px;
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
+}
+
+header .container .menu i:hover {
+  color: rgba(255, 255, 255, 0.798);
+}
+
+.logo img {
+  width: 120px;
+  margin-top: 10px;
+}
+
+.items-center {
+  font-size: 13px;
+  cursor: pointer;
+}
+.items-center span,
+.items-center i {
+  margin-right: 10px;
+  position: relative;
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
+}
+
+.items-center i span {
+  font-size: 70px;
+  position: absolute;
+  bottom: 2px;
+  left: 8px;
+}
+
+.items-center span:hover,
+.items-center i:hover {
+  color: rgba(255, 255, 255, 0.798);
+}
+
+@media (max-width: 768px) {
+  header .menu span span {
+    display: none;
+  }
+  header .items-center span.same {
+    display: none;
+  }
+}
+/* End Header */
+/* Start Landing */
+
+.landing {
+  position: relative;
+  background-image: url("../imgs/background.png");
+  background-size: 100% auto;
+  background-position: center top;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: auto;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+/* End Landing */
+
+/* Start Playing Section */
+.playing .title {
+  color: white;
+}
+/* End Playing Section */
