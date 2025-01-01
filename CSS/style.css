@@ -8,6 +8,7 @@ body {
   font-family: "Cairo", sans-serif;
   direction: rtl;
   background-color: #1d2c1e;
+  overflow-x: hidden;
 }
 
 .container {
@@ -135,7 +136,7 @@ header .container .menu i:hover {
 
 @media screen and (min-width: 768px) {
   .landing {
-    min-height: 140vh;
+    /* min-height: 140vh; */
     padding-bottom: 0;
   }
 }
@@ -158,12 +159,12 @@ header .container .menu i:hover {
 
 /* Start Playing Section */
 
-.playing .title {
+.title {
   color: white;
   font-size: 1.125rem;
 }
 
-.playing .cards {
+.cards {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
   gap: 12px;
@@ -171,18 +172,18 @@ header .container .menu i:hover {
 }
 
 @media (max-width: 991px) {
-  .playing .cards {
+  .cards {
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   }
 }
 
 @media (max-width: 767px) {
-  .playing .cards {
+  .cards {
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   }
 }
 
-.playing .cards .card {
+.cards .card {
   border-radius: 15px;
   -webkit-border-radius: 15px;
   -moz-border-radius: 15px;
@@ -193,32 +194,28 @@ header .container .menu i:hover {
   color: white;
 }
 
-.playing .cards img {
+.cards img {
   width: 100%;
 }
 
-.playing .cards img:hover {
+.cards img:hover {
   opacity: 0.9;
 }
 
-.playing .cards .card .txt {
-  font-variant-numeric: arabic-indic;
-}
-
-.playing .cards .card .txt h3 {
+.cards .card .txt h3 {
   font-size: 15px;
 }
 
-.playing .cards .card .txt h4 {
+.cards .card .txt h4 {
   font-size: 12px;
   margin: 10px;
   font-weight: normal;
 }
-.playing .cards .card .txt h4 del {
+.cards .card .txt h4 del {
   margin-right: 5px;
 }
 
-.playing .cards .card .btns {
+.cards .card .btns {
   width: 100%;
   margin: auto;
   font-size: 15px;
@@ -226,14 +223,14 @@ header .container .menu i:hover {
   justify-content: center;
 }
 
-.playing .cards .card .btns button {
+.cards .card .btns button {
   background-color: transparent;
   border: none;
   cursor: pointer;
   color: white;
 }
 
-.playing .cards .card .btns button.add {
+.cards .card .btns button.add {
   border: 1px solid;
   padding: 5px;
   border-radius: 20px;
@@ -250,13 +247,325 @@ header .container .menu i:hover {
   -o-transition: 0.3s;
 }
 
-.playing .cards .card .btns button.add:hover {
+.cards .card .btns button.add:hover {
   background-color: white;
   color: #99dfb9;
 }
 
-.playing .cards .card .btns button.like {
+.cards .card .btns button.like {
   font-size: 20px;
   opacity: 0.3;
 }
 /* End Playing Section */
+/* Start Store Subscriptions  */
+
+.subscriptions-section {
+  position: relative;
+  margin-top: 80px;
+  overflow: hidden;
+}
+
+.background-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60%;
+  background-image: url("../imgs/Subscriptions_Background.png"); /* رابط الخلفية */
+  background-size: cover;
+  background-position: center;
+  z-index: 2;
+}
+
+.background-overlay::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 1);
+  opacity: 0.6;
+}
+
+.section-header {
+  margin: 80px 30px 80px;
+  position: relative;
+  z-index: 2;
+}
+
+.section-header h2 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: white;
+}
+
+.section-header p {
+  font-size: 1rem;
+  color: white;
+}
+
+.subscriptions-container {
+  display: flex;
+  gap: 12px;
+  margin: 20px;
+  position: relative;
+  z-index: 2;
+  justify-content: flex-start;
+}
+
+.subscription-card {
+  background-color: #1d2c1e;
+  border-radius: 10px;
+  overflow: hidden;
+  text-align: center;
+  width: 300px;
+}
+
+.card-image img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.card-details {
+  padding: 15px;
+}
+
+.card-details .txt h3 {
+  font-size: 15px;
+  color: white;
+}
+
+.card-details .txt h4 {
+  font-size: 12px;
+  margin: 10px;
+  font-weight: normal;
+}
+
+.card-details .txt h4 del {
+  margin-right: 5px;
+}
+
+.card-details .price {
+  font-size: 1.2rem;
+  color: #fff;
+  margin: 10px 0;
+}
+
+.card-details .btns {
+  width: 100%;
+  margin: auto;
+  font-size: 15px;
+  display: flex;
+  justify-content: center;
+}
+
+.card-details .btns button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: white;
+}
+
+.card-details .btns button.add {
+  border: 1px solid;
+  padding: 5px;
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+  margin-left: 7px;
+  width: 75%;
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
+}
+
+.card-details .btns button.add:hover {
+  background-color: white;
+  color: #99dfb9;
+}
+
+.card-details .btns button.like {
+  font-size: 20px;
+  opacity: 0.3;
+}
+
+/* Responsive Design for Mobile */
+/* @media screen and (max-width: 768px) {
+  .subscriptions-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .subscription-card {
+    width: 90%; 
+  }
+
+  .card-image img {
+    height: auto;
+  }
+} */
+
+/* Start Store Subscriptions  */
+
+/* Start Hacks Subscription */
+
+.hacks {
+  margin: 30px 0;
+}
+
+.hacks .txt {
+  color: white;
+}
+
+.hacks .txt h3 {
+  font-size: 1.125rem;
+  line-height: 1.2;
+}
+
+.hacks .txt p {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  margin: 10px 0 30px;
+}
+
+.hacks .codes {
+  display: flex;
+  align-items: center;
+  gap: 130px;
+  padding-right: 50px;
+}
+
+.hacks .codes .code {
+  text-align: center;
+}
+
+.hacks .codes .code img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  margin-bottom: 10px;
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
+}
+
+.hacks .codes .code img:hover {
+  scale: 1.1;
+  cursor: pointer;
+}
+
+.hacks .codes .code h4 {
+  color: white;
+  font-size: 0.875rem;
+}
+
+/* End Hacks Subscription */
+
+/* Start Store Results */
+
+.results {
+  color: white;
+  text-align: center;
+}
+
+.results .txt {
+  margin: 70px 0 10px;
+}
+
+.results .txt h3 {
+  margin-bottom: 8px;
+  font-size: 1.125rem;
+}
+
+.results .res {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.results .res > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.results .res img {
+  width: 80px;
+}
+
+.results .res strong {
+  margin: 7px 0;
+}
+
+.results .res p {
+  font-size: 0.875rem;
+}
+
+/* End Store Results */
+/* Start Testimonials */
+
+.container .title {
+  margin: 60px 0 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.container .title h2 {
+  font-size: 1.125rem;
+}
+
+.container .title i {
+  margin-right: 30px;
+  color: #e5e7eba8;
+
+}
+
+.container .swiper-container {
+  width: 279px;
+  padding: 0 16px;
+  text-align: center;
+  color: white;
+}
+
+.container .swiper-container .swiper-slide img {
+  width: 96px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
+.container .swiper-container .swiper-slide h4 {
+  font-size: 18px;
+  margin: 5px 0;
+}
+
+.container .swiper-container .swiper-slide div i {
+  color: goldenrod;
+  margin: 5px 0;
+  font-size: 14px;
+}
+
+.container .swiper-container .swiper-slide div i.wh {
+  color: #e5e7eb;
+}
+
+.container .swiper-container .swiper-slide p {
+  font-size: 16px;
+  line-height: 1.6;
+}
+/* End Testimonials */
