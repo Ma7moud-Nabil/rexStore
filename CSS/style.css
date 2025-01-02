@@ -27,6 +27,24 @@ ul {
   position: relative;
 }
 
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: transparent;
+  transition: background-color 0.3s;
+  -webkit-transition: background-color 0.3s;
+  -moz-transition: background-color 0.3s;
+  -ms-transition: background-color 0.3s;
+  -o-transition: background-color 0.3s;
+}
+
+header.scrolled {
+  background-color: #1d2c1e;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
 .whatsapp-bottom img {
   position: fixed;
   width: 50px;
@@ -63,8 +81,6 @@ header .container {
   color: white;
   padding: 5px 10px;
   margin-right: 10px;
-  position: absolute;
-  z-index: 1;
 }
 
 header .container .menu {
@@ -145,7 +161,6 @@ header .container .menu i:hover {
 
 @media screen and (min-width: 768px) {
   .landing {
-    /* min-height: 140vh; */
     padding-bottom: 0;
   }
 }
@@ -166,7 +181,7 @@ header .container .menu i:hover {
 
 /* End Landing */
 
-/* Start Playing Section */
+/* Start Game codes Section */
 
 .title {
   color: white;
@@ -265,7 +280,9 @@ header .container .menu i:hover {
   font-size: 20px;
   opacity: 0.3;
 }
-/* End Playing Section */
+
+/* End Game codes Section */
+
 /* Start Store Subscriptions  */
 
 .subscriptions-section {
@@ -314,21 +331,35 @@ header .container .menu i:hover {
   color: white;
 }
 
+.subscriptions-container-wrapper {
+  overflow-x: scroll;
+  white-space: nowrap;
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none; /* Firefox */
+}
+
+.subscriptions-container-wrapper::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
+}
+
 .subscriptions-container {
-  display: flex;
-  gap: 12px;
-  margin: 20px;
-  position: relative;
-  z-index: 2;
-  justify-content: flex-start;
+  display: inline-flex;
 }
 
 .subscription-card {
+  flex: 0 0 auto;
+  width: 300px;
+  margin-right: 10px;
   background-color: #1d2c1e;
   border-radius: 10px;
   overflow: hidden;
   text-align: center;
   width: 300px;
+  z-index: 2;
+  cursor: pointer;
+}
+.subscription-card:hover {
+  opacity: 0.9;
 }
 
 .card-image img {
@@ -403,21 +434,23 @@ header .container .menu i:hover {
   opacity: 0.3;
 }
 
-/* Responsive Design for Mobile */
-/* @media screen and (max-width: 768px) {
-  .subscriptions-container {
-    flex-direction: column;
-    align-items: center;
+@media screen and (max-width: 500px) {
+  .subscriptions-section .section-header {
+    margin: 40px 10px;
   }
-
+  .subscriptions-section .section-header h2 {
+    font-size: 24px;
+  }
+  .subscriptions-section .section-header p {
+    font-size: 14px;
+  }
+  .subscriptions-section .subscriptions-container {
+    margin: 10px;
+  }
   .subscription-card {
-    width: 90%; 
+    width: 242px;
   }
-
-  .card-image img {
-    height: auto;
-  }
-} */
+}
 
 /* Start Store Subscriptions  */
 
@@ -447,10 +480,22 @@ header .container .menu i:hover {
   align-items: center;
   gap: 130px;
   padding-right: 50px;
+  overflow-x: scroll;
+  white-space: nowrap;
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none; /* Firefox */
+  padding-top: 5px;
+}
+
+.codes::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
 }
 
 .hacks .codes .code {
   text-align: center;
+  display: inline-block;
+  margin-right: 10px; /* مسافة بين البطاقات */
+  cursor: pointer;
 }
 
 .hacks .codes .code img {
@@ -462,11 +507,22 @@ header .container .menu i:hover {
   -ms-border-radius: 50%;
   -o-border-radius: 50%;
   margin-bottom: 10px;
-  transition: 0.3s;
-  -webkit-transition: 0.3s;
-  -moz-transition: 0.3s;
-  -ms-transition: 0.3s;
-  -o-transition: 0.3s;
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+}
+
+@media screen and (max-width: 500px) {
+  .hacks .codes {
+    gap: 60px;
+    padding-right: 0;
+  }
+  .hacks .codes .code img {
+    width: 56px;
+    height: 56px;
+  }
 }
 
 .hacks .codes .code img:hover {
@@ -512,6 +568,15 @@ header .container .menu i:hover {
 
 .results .res img {
   width: 80px;
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+}
+
+.results .res img:hover {
+  scale: 1.1;
 }
 
 .results .res strong {
@@ -553,6 +618,7 @@ header .container .menu i:hover {
   gap: 150px;
   padding-right: 75px;
 }
+
 .container .swiper-container .swiper-slide img {
   width: 96px;
   border-radius: 50%;
@@ -595,6 +661,16 @@ header .container .menu i:hover {
   font-size: 30px;
   color: rgba(210, 209, 209, 0.149);
 }
+
+/* ================================= */
+/* ================================= */
+@media screen and (max-width: 500px) {
+  .container .swiper-container {
+    display: none;
+  }
+}
+/* ================================= */
+/* ================================= */
 /* End Testimonials */
 /* Start Following Section */
 
@@ -660,6 +736,8 @@ header .container .menu i:hover {
   -moz-transition: 0.3s;
   -ms-transition: 0.3s;
   -o-transition: 0.3s;
+  font-size: 14px;
+  font-weight: bold;
 }
 
 .follow .right .form input:last-of-type:hover {
@@ -795,7 +873,6 @@ footer .bottom img {
 }
 
 @media (max-width: 768px) {
-
   footer .top,
   footer .bottom {
     flex-direction: column;
